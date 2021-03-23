@@ -17,7 +17,7 @@ class getJsonStr:
     def __init__(self, value):
         self.value = value  # 要解析的数据
         self.log = Log()  # 日志
-        self.test_data = get_test_data('app_test_data.xlsx', 'common', 0)
+        self.test_data = get_test_data('test_data.xlsx', 'common', 0)
         self.url = self.test_data['url']
         self.headers = self.test_data['header']
         self.method = self.test_data['method']

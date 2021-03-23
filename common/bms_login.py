@@ -12,7 +12,7 @@ import json
 
 class getBmsToken(object):
     def __init__(self):
-        self.test_data = get_test_data('app_test_data.xlsx', 'login', 1)
+        self.test_data = get_test_data('test_data.xlsx', 'login', 1)
         self.log = Log()
         self.url = self.test_data['url']
         self.method = self.test_data['method']

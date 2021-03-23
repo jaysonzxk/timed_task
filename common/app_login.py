@@ -12,7 +12,7 @@ import json
 
 class getAppToken(object):
     def __init__(self):
-        self.test_data = get_test_data('app_test_data.xlsx', 'login', 0)
+        self.test_data = get_test_data('test_data.xlsx', 'login', 0)
         # print(self.test_data)
         self.log = Log()
         self.url = self.test_data['url']

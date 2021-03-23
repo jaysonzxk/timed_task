@@ -4,7 +4,6 @@ filename: timed_recharge.py
 datetime： 2021/3/23 16:31 
 ide： PyCharm
 """
-import datetime
 from jsonpath import jsonpath
 import requests
 import json
@@ -40,6 +39,7 @@ class Recharge:
         for i in range(100):
             res = requests.post(self.url, data=self.data, headers=self.headers).json()
             log().info(message='充值次数{}，接口返回{}'.format(i, res))
+            time.sleep(0.5)
 
 
 class GetData:
@@ -107,6 +107,7 @@ class Review:
             data = {"id": item, "auditState": "RECHARGE_SUCCESS"}
             res = requests.post(url, data=json.dumps(data), headers=headers)
             log().info('接口返回{}'.format(res.json()))
+            time.sleep(0.5)
 
 
 def job_Recharge():

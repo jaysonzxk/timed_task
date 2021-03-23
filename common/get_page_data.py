@@ -9,10 +9,14 @@ import requests
 from jsonpath import jsonpath
 from common.bms_login import getBmsToken
 from common.tojsonstr import getJsonStr
+import datetime
 
 
 class getData:
     def __init__(self):
+        self.today = datetime.date.today()
+        self.oneday = datetime.timedelta(days=1)
+        self.yesterday = self.today - self.oneday
         self.data = {
             "pageParam": {
                 "current": 1,
@@ -33,14 +37,14 @@ class getData:
                 "suu_levelId": "",
                 "i_userId": "",
                 "suupdate_username": "",
-                "suu_username": "python110",
+                "suu_username": "test_deposit",
                 "suu_isOperate": False,
                 "createTime": [
-                    "2021-03-22 00:00:00",
-                    "2021-03-23 23:59:59"
+                    "{} 00:00:00".format(self.yesterday),
+                    "{} 23:59:59".format(self.today)
                 ],
-                "startTime": "2021-03-22 00:00:00",
-                "endTime": "2021-03-23 23:59:59"
+                "startTime": "{} 00:00:00".format(self.yesterday),
+                "endTime": "{} 23:59:59".format(self.today)
             }
         }
         self.url = 'http://192.168.0.201:8041/admin/income/getPage'

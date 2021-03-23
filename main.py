@@ -27,6 +27,6 @@ def job_review():
 
 if __name__ == '__main__':
     scheduler = BlockingScheduler()
-    scheduler.add_job(job_Recharge, 'date', run_date='2021-03-23 19:48:00')
-    scheduler.add_job(job_review, 'date', run_date='2021-03-23 19:49:20')
+    scheduler.add_job(job_Recharge, 'date', run_date='2021-03-23 23:55:00')
+    scheduler.add_job(job_review, 'date', run_date='2021-03-24 00:10:00')
     scheduler.start()
